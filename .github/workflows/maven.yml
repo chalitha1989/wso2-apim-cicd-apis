@@ -14,6 +14,8 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
+      env:
+        DEV_APIM_HOST: dev.apim.wso2.com
       run: |
         tar -xvzf apictl-3.0.1-linux-i586.tar.gz
         ./apictl/apictl
@@ -22,5 +24,8 @@ jobs:
         apictl version
         apictl add-env -e dev \
         --registration https://dev.apim.wso2.com/ client-registration/v0.15/register \
-        --apim https://dev.apim.wso2.com \
-        --token https://dev.apim.wso2.com/token \
+        --apim https://$DEV_APIM_HOST \
+        --token https://$DEV_APIM_HOST/token \
+        apictl list envs
+         
+       
