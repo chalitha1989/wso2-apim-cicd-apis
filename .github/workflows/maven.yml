@@ -17,5 +17,6 @@ jobs:
       run: |
         tar -xvzf apictl-3.0.1-linux-i586.tar.gz
         ./apictl/apictl
-        export PATH=${PATH}:/home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/apictl/apictl
+        export PATH=${PATH}:/home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/apictl/
+        echo $PATH
         apictl version
