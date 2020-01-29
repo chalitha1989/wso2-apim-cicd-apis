@@ -20,9 +20,6 @@ jobs:
         tar -xvzf apictl-3.0.1-linux-i586.tar.gz
         ./apictl/apictl
         export PATH=${PATH}:/home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/apictl/
-        echo $PATH
-        apictl version
-        apictl list envs
         apictl add-env -e dev \
         --registration https://dev.apim.wso2.com/ client-registration/v0.15/register \
         --apim https://$DEV_APIM_HOST \
