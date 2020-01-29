@@ -16,5 +16,6 @@ jobs:
     - name: Build with Maven
       run: |
         tar -xvzf apictl-3.0.1-linux-i586.tar.gz
-        pwd
         ./apictl/apictl
+        export PATH=${PATH}:/home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/apictl/apictl
+        apictl version
