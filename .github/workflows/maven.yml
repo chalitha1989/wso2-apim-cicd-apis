@@ -20,3 +20,7 @@ jobs:
         export PATH=${PATH}:/home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/apictl/
         echo $PATH
         apictl version
+        apictl add-env -e dev \
+        --registration https://dev.apim.wso2.com/ client-registration/v0.15/register \
+        --apim https://dev.apim.wso2.com \
+        --token https://dev.apim.wso2.com/token \
