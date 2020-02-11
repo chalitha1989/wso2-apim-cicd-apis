@@ -16,7 +16,7 @@ jobs:
       env:
         DEV_ENV: dev
         API_DIR: ./SampleStore
-        DEV_APIM_HOST: 104.42.181.226:9443
+        DEV_APIM_HOST: 104.42.181.226
         APIM_ADMIN_USERNAME: ${{ secrets.APIM_ADMIN_USERNAME }}
         API_ADMIN_PASSWORD: ${{ secrets.API_ADMIN_PASSWORD }}
       run: |
@@ -25,9 +25,9 @@ jobs:
         ./apictl/apictl
         export PATH=${PATH}:/home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/apictl/
         apictl add-env -e dev \
-        --registration https://$DEV_APIM_HOST/ client-registration/v0.15/register \
-        --apim https://$DEV_APIM_HOST \
-        --token https://$DEV_APIM_HOST/token
+        --registration https://$DEV_APIM_HOST/ client-registration/v0.15/register:9443 \
+        --apim https://$DEV_APIM_HOST:9443 \
+        --token https://$DEV_APIM_HOST:8243/token
         apictl list envs
         echo 'Deploying the API to $DEV_ENV'   
         apictl login $DEV_ENV -u $APIM_ADMIN_USERNAME -p $API_ADMIN_PASSWORD -k
