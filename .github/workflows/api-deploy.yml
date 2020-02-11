@@ -17,7 +17,7 @@ jobs:
       env:
         DEV_ENV: dev
         API_DIR: ./SampleStore
-        DEV_APIM_HOST: dev.apim.wso2.com
+        DEV_APIM_HOST: 104.42.181.226:9443
         APIM_ADMIN_USERNAME: ${{ secrets.APIM_ADMIN_USERNAME }}
         API_ADMIN_PASSWORD: ${{ secrets.API_ADMIN_PASSWORD }}
       run: |
