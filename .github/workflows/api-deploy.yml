@@ -24,7 +24,7 @@ jobs:
         ./apictl/apictl
         export PATH=${PATH}:/home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/apictl/
         apictl add-env -e dev \
-        --registration https://$DEV_APIM_HOST:9443/ client-registration/v0.15/register \
+        --registration https://$DEV_APIM_HOST:9443/client-registration/v0.15/register \
         --apim https://$DEV_APIM_HOST:9443 \
         --token https://$DEV_APIM_HOST:8243/token
         apictl list envs
