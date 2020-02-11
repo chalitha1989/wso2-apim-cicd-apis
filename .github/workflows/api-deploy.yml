@@ -14,7 +14,7 @@ jobs:
     - name: Initialize apictl and deploy
       env:
         DEV_ENV: dev
-        API_DIR: ./SampleStore
+        API_DIR: /home/runner/work/wso2-apim-cicd-apis/wso2-apim-cicd-apis/SampleAPI-1.0
         DEV_APIM_HOST: 104.42.181.226
         APIM_ADMIN_USERNAME: ${{ secrets.APIM_ADMIN_USERNAME }}
         API_ADMIN_PASSWORD: ${{ secrets.API_ADMIN_PASSWORD }}
@@ -28,7 +28,8 @@ jobs:
         --apim https://$DEV_APIM_HOST:9443 \
         --token https://$DEV_APIM_HOST:8243/token
         apictl list envs
-        echo 'Deploying the API to $DEV_ENV'   
+        echo 'Deploying the API to $DEV_ENV'  
+        ls /home/runner/.wso2apictl/exported/apis/ 
         apictl login $DEV_ENV -u $APIM_ADMIN_USERNAME -p $API_ADMIN_PASSWORD -k
         apictl import-api -f $API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose 
          
